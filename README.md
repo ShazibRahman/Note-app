@@ -1,0 +1,2 @@
+# Note-app
+A Simple Note Taking App built using ReactJs, Express, and MongoDB is a web application that provides users with the ability to manage their notes. The app allows users to sign up and log in to their account. After logging in, users can create new notes, update existing notes, and delete notes they no longer need. 
