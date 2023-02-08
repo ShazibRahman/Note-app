@@ -6,13 +6,13 @@ const Login = (props) => {
     const history = useNavigate()
     const [credential, setCredential] = useState({ email: "", password: "" })
     const handleSubmit = async (e) => {
-        console.log("called");
         e.preventDefault()
-        const response = await fetch("http://localhost:4000/api/auth/login", {
+        const ip = process.env.REACT_APP_IP || 'localhost'
+        console.log(ip)
+        const response = await fetch(`http://${ip}:4000/api/auth/login`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
-                "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjNlMGVlZDU0MWNiOTQ1NjkzZjkzMzlhIn0sImlhdCI6MTY3NTY4OTM4OH0.Lt5pU-WhmAw8D5YfAG9DIn9cNDv9jO5S6DM78W5u5dY"
             },
             body: JSON.stringify({ email: credential.email, password: credential.password })
         });

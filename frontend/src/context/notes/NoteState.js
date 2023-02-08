@@ -2,11 +2,16 @@
 import { useState } from "react";
 import NoteContext from "./noteContext";
 
+
 const NoteState = (props) => {
 
-    const host = 'http://localhost:4000'
     const notesInitial = []
     const [notes, setNotes] = useState(notesInitial)
+
+    const ip = process.env.REACT_APP_IP || 'localhost'
+    console.log(ip);
+    const host = `http://${ip}:4000`
+
 
     // Add a note 
     const addNote = async (title, description, tag) => {

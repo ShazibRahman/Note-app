@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import NoteContext from '../context/notes/noteContext';
 import AddNote from './AddNote';
